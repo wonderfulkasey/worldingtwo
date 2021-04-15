@@ -1,0 +1,60 @@
+<% if @world.user_id == current_user.id %>
+<br>
+    <%= link_to "EDIT WORLD", edit_world_path(@world) %> <br>
+    <br>
+    <%= link_to "delete world", @world, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br>
+    <br>
+    <%= link_to "NEW CHARACTER", new_world_character_path(@world) %> <br>
+    <%= link_to "NEW PLOT", new_world_plot_path(@world) %>
+<br>
+<br>
+
+<% else %>
+ <h3>Created by: <%= @world.user.email %>
+ </h3>
+<br>
+<br>
+<% end %>
+
+<br>
+
+<p>
+  <strong>Name:</strong>
+  <%= @world.name %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @world.description %>
+</p>
+
+
+<p>
+  <h3>plots in <%= @world.name %> </h3>
+            <% @plots.each do |p| %>
+                
+           <li><%= link_to p.title, world_plot_path(p.world, p) %></li>
+ 
+
+            <% end %>
+            <br>
+</p>
+
+<br>
+<p>
+            <h3>characters in <%= @world.name %></h3>
+            <div>
+             <% @characters.each do |c| %>
+                
+                  <li><%= link_to c.name, world_character_path(c.world, c) %></li>
+ <% end %>
+             </div>
+</p>
+<br>
+
+<h2>
+<%= link_to 'BACK', worlds_path %>
+
+</h2>
+
