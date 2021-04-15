@@ -18,4 +18,3 @@ The project is available as open source under the terms of the MIT License.
 # Contributing 
 Pull requests/bug reports are welcome on this application. 
 
-# Worlding2
