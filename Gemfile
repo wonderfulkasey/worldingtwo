@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
 #for signup and users
 gem 'devise'
-gem 'omniauth-github'
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 
 #better error pages
 group :development do
